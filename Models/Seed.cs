@@ -116,7 +116,8 @@ namespace ZenithSocietyA2.Models
 			*/
 
             // Get the ActivityCategories + Events data and save it
-            context.ActivityCategories.AddRange(GetActivityCategories().ToArray());
+		    
+            context.ActivityCategories.AddRange (GetActivityCategories().ToArray());
             context.Events.AddRange(GetEvents().ToArray());
             context.SaveChanges();
 
