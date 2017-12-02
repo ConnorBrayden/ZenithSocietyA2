@@ -37,7 +37,7 @@ namespace ZenithSocietyA2.Models
             // Seed the emails + usernames for Admin/Member
             //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             string[] emails = { "a@a.a", "m@m.m" };
-            string[] userNames = { "a", "m" };
+            string[] userNames = { "a@a.a", "m@m.m" };
 
             if (await userManager.FindByEmailAsync(emails[0]) == null)
             {
@@ -116,7 +116,8 @@ namespace ZenithSocietyA2.Models
 			*/
 
             // Get the ActivityCategories + Events data and save it
-            context.ActivityCategories.AddRange(GetActivityCategories().ToArray());
+		    
+            context.ActivityCategories.AddRange (GetActivityCategories().ToArray());
             context.Events.AddRange(GetEvents().ToArray());
             context.SaveChanges();
 
@@ -216,8 +217,8 @@ namespace ZenithSocietyA2.Models
                 // Below are the same events as on the outline, but 1 week earlier (for our testing)
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 10, 8, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 10, 10, 30, 0),
+                    FromDate = new DateTime(2017, 11, 30, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 30, 10, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 1,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -225,8 +226,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 11, 8, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 11, 10, 30, 0),
+                    FromDate = new DateTime(2017, 11, 29, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 29, 10, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 2,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -234,8 +235,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 13, 17, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 13, 19, 15, 0),
+                    FromDate = new DateTime(2017, 12, 1, 17, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 1, 19, 15, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 3,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -243,8 +244,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 13, 19, 0, 0),
-                    ToDate =  new DateTime(2017, 10, 13, 20, 0, 0),
+                    FromDate = new DateTime(2017, 11, 28, 19, 0, 0),
+                    ToDate =  new DateTime(2017, 11, 28, 20, 0, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 4,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -252,8 +253,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 14, 8, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 14, 10, 30, 0),
+                    FromDate = new DateTime(2017, 11, 27, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 27, 10, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 5,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -261,8 +262,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 14, 10, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 14, 12, 0, 0),
+                    FromDate = new DateTime(2017, 11, 28, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 28, 12, 0, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 6,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -270,8 +271,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 14, 12, 0, 0),
-                    ToDate =  new DateTime(2017, 10, 14, 13, 30, 0),
+                    FromDate = new DateTime(2017, 11, 24, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 11, 24, 13, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 7,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -279,8 +280,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 15, 7, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 15, 8, 30, 0),
+                    FromDate = new DateTime(2017, 11, 25, 7, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 25, 8, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 8,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -288,8 +289,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 15, 8, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 15, 10, 30, 0),
+                    FromDate = new DateTime(2017, 11, 25, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 25, 10, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 9,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -297,8 +298,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 15, 8, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 15, 10, 30, 0),
+                    FromDate = new DateTime(2017, 11, 25, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 25, 10, 30, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 10,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -306,8 +307,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 15, 10, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 15, 12, 0, 0),
+                    FromDate = new DateTime(2017, 11, 25, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 25, 12, 0, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 11,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -315,8 +316,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 15, 12, 0, 0),
-                    ToDate =  new DateTime(2017, 10, 15, 13, 0, 0),
+                    FromDate = new DateTime(2017, 11, 25, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 11, 25, 13, 0, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 12,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -324,8 +325,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 15, 13, 0, 0),
-                    ToDate =  new DateTime(2017, 10, 15, 18, 0, 0),
+                    FromDate = new DateTime(2017, 11, 25, 13, 0, 0),
+                    ToDate =  new DateTime(2017, 11, 25, 18, 0, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 13,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
