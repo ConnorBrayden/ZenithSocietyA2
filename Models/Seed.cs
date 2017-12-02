@@ -5,16 +5,20 @@ namespace ZenithSocietyA2.Models
 {
 	using System;
 	using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
+ //   using System.Data.Entity;
+ //   using System.Data.Entity.Migrations;
     using System.Linq;
     using ZenithSocietyA2.Models;
+	using ZenithSocietyA2.Data;
 
 
 	public class Seed
 	{
 
-		public static void Initialize(ApplicationDbContext db) {
+		public static void Initialize(ApplicationDbContext context) {
+
+
+			/*
 
 			// Create Roles for Admin and Member 
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
@@ -52,15 +56,17 @@ namespace ZenithSocietyA2.Models
                     userManager.AddToRole(userManager.FindByEmail(user.Email).Id, "Member");
             }
 
+			*/
+
             // Get the ActivityCategories + Events data and save it
             context.ActivityCategories.AddRange(GetActivityCategories().ToArray());
-            context.Events.AddRange(GetEvents().ToArray());
+  //          context.Events.AddRange(GetEvents().ToArray());
             context.SaveChanges();
 
 
 		} // static function
 
-		private List<ActivityCategory> GetActivityCategories()
+		private static List<ActivityCategory> GetActivityCategories()
         {
             // ActivityCategoryId
             // ActivityDescription
@@ -138,7 +144,7 @@ namespace ZenithSocietyA2.Models
             return categories;
         }
 
-        private List<Event> GetEvents()
+        private static List<Event> GetEvents()
         {
             //EventId
             //Event from date and time
