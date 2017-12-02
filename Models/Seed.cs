@@ -1,6 +1,9 @@
 
 
 
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
 namespace ZenithSocietyA2.Models
 {
 	using System;
@@ -8,14 +11,68 @@ namespace ZenithSocietyA2.Models
  //   using System.Data.Entity;
  //   using System.Data.Entity.Migrations;
     using System.Linq;
-    using ZenithSocietyA2.Models;
+   
+    using Microsoft.AspNetCore.Builder;
+	using Microsoft.AspNetCore.Identity;
+   
+	using ZenithSocietyA2.Models;
 	using ZenithSocietyA2.Data;
+
+	
 
 
 	public class Seed
 	{
 
-		public static void Initialize(ApplicationDbContext context) {
+
+		public static async void SeedRoles(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, DbContext context)
+		{
+		    
+			if (!await roleManager.RoleExistsAsync("Admin"))
+                await roleManager.CreateAsync(new IdentityRole("Admin"));
+
+            if (!await roleManager.RoleExistsAsync("Member"))
+                await roleManager.CreateAsync(new IdentityRole("Member"));
+
+            // Seed the emails + usernames for Admin/Member
+            //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            string[] emails = { "a@a.a", "m@m.m" };
+            string[] userNames = { "a", "m" };
+
+            if (await userManager.FindByEmailAsync(emails[0]) == null)
+            {
+                var user = new ApplicationUser
+                {
+                    Email = emails[0],
+                    UserName = userNames[0],
+                };
+                var result = await userManager.CreateAsync(user, "P@$$w0rd");
+                if (result.Succeeded)
+                { 
+                    var _user = await userManager.FindByEmailAsync(user.Email);
+                    await userManager.AddToRoleAsync(_user, "Admin");
+                }
+            }
+		    if (await userManager.FindByEmailAsync(emails[1]) == null)
+		    {
+		        var user = new ApplicationUser
+		        {
+		            Email = emails[1],
+		            UserName = userNames[1],
+		        };
+		        var result = await userManager.CreateAsync(user, "P@$$w0rd");
+		        if (result.Succeeded)
+		        {
+		            var _user = await userManager.FindByEmailAsync(user.Email);
+		            await userManager.AddToRoleAsync(_user, "Member");
+
+		        }
+		    }
+
+
+		}
+
+		public static void SeedEvents(ApplicationDbContext context) {
 
 
 			/*
@@ -60,7 +117,7 @@ namespace ZenithSocietyA2.Models
 
             // Get the ActivityCategories + Events data and save it
             context.ActivityCategories.AddRange(GetActivityCategories().ToArray());
-  //          context.Events.AddRange(GetEvents().ToArray());
+            context.Events.AddRange(GetEvents().ToArray());
             context.SaveChanges();
 
 
