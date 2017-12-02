@@ -31,16 +31,24 @@ namespace ZenithSocietyA2
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders()
+                .AddUserManager<UserManager<ApplicationUser>>();
+
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
+
+
+//			services.AddIdentity<Entities.DB.User, IdentityRole<int>>()
+//                .AddEntityFrameworkStores<MyDBContext, int>();
+
+			//services.AddScoped<RoleManager<IdentityRole>>();
 
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context, RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
             if (env.IsDevelopment())
             {
@@ -49,6 +57,7 @@ namespace ZenithSocietyA2
             }
             else
             {
+             
                 app.UseExceptionHandler("/Home/Error");
             }
 
@@ -62,6 +71,11 @@ namespace ZenithSocietyA2
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            Seed.SeedRoles(roleManager, userManager, context);
+			Seed.SeedEvents(context);
+
+
         }
     }
 }
