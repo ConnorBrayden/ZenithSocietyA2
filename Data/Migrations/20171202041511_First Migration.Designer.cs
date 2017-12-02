@@ -11,9 +11,10 @@ using ZenithSocietyA2.Data;
 namespace ZenithSocietyA2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171202041511_First Migration")]
+    partial class FirstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +181,7 @@ namespace ZenithSocietyA2.Data.Migrations
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
                         .WithMany()
-					//    .HasForeignKey("RoleId")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -188,7 +189,7 @@ namespace ZenithSocietyA2.Data.Migrations
                 {
                     b.HasOne("ZenithSocietyA2.Models.ApplicationUser")
                         .WithMany()
-                 //       .HasForeignKey("UserId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -196,7 +197,7 @@ namespace ZenithSocietyA2.Data.Migrations
                 {
                     b.HasOne("ZenithSocietyA2.Models.ApplicationUser")
                         .WithMany()
-                   //     .HasForeignKey("UserId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -204,12 +205,12 @@ namespace ZenithSocietyA2.Data.Migrations
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
                         .WithMany()
-                     //   .HasForeignKey("RoleId")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ZenithSocietyA2.Models.ApplicationUser")
                         .WithMany()
-                     //   .HasForeignKey("UserId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -217,7 +218,7 @@ namespace ZenithSocietyA2.Data.Migrations
                 {
                     b.HasOne("ZenithSocietyA2.Models.ApplicationUser")
                         .WithMany()
-                      //  .HasForeignKey("UserId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
