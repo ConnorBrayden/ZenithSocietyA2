@@ -34,6 +34,12 @@ namespace ZenithSocietyA2
                 .AddDefaultTokenProviders()
                 .AddUserManager<UserManager<ApplicationUser>>();
 
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
@@ -50,6 +56,7 @@ namespace ZenithSocietyA2
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context, RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
+            app.UseCors("MyPolicy");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

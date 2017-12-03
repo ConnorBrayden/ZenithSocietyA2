@@ -17,7 +17,7 @@ using ZenithSocietyA2.Models;
 
 namespace ZenithSocietyA2.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class EventsController : Controller
     {
         private ApplicationDbContext db;
