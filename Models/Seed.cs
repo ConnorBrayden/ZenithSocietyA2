@@ -116,6 +116,18 @@ namespace ZenithSocietyA2.Models
 			*/
 
             // Get the ActivityCategories + Events data and save it
+
+
+		    context.Database.ExecuteSqlCommand("DELETE FROM ActivityCategories");		    
+		    context.Database.ExecuteSqlCommand("DELETE FROM Events");
+
+		    context.Database.ExecuteSqlCommand(
+		        "UPDATE sqlite_sequence SET seq = 0 WHERE name=\"ActivityCategories\"");
+    
+		    context.Database.ExecuteSqlCommand(
+		        "UPDATE sqlite_sequence SET seq = 0 WHERE name=\"Events\"");
+    
+		    
 		    
             context.ActivityCategories.AddRange (GetActivityCategories().ToArray());
             context.Events.AddRange(GetEvents().ToArray());
