@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using ZenithSocietyA2.Data;
 using ZenithSocietyA2.Models;
 using ZenithSocietyA2.Data;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace ZenithSocietyA2.Controllers
 {
@@ -49,7 +51,8 @@ namespace ZenithSocietyA2.Controllers
         }
 
         // PUT: api/Studentsapi/5
-        [HttpPut("{id}")]
+        [HttpPut("{id}")]    
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutEvent([FromRoute] int id, [FromBody] Event @event)
         {
             if (!ModelState.IsValid)
@@ -85,6 +88,7 @@ namespace ZenithSocietyA2.Controllers
 
         // POST: api/Studentsapi
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PostEvent([FromBody] Event @event)
         {
             if (!ModelState.IsValid)
@@ -100,6 +104,7 @@ namespace ZenithSocietyA2.Controllers
 
         // DELETE: api/Studentsapi/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteStudent([FromRoute] int id)
         {
             if (!ModelState.IsValid)

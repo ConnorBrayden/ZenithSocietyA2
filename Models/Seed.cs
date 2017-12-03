@@ -366,8 +366,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 20, 17, 30, 0),
-                    ToDate =  new DateTime(2017, 10, 20, 19, 15, 0),
+                    FromDate = new DateTime(2017, 12, 12, 17, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 12, 19, 15, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 3,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -375,8 +375,8 @@ namespace ZenithSocietyA2.Models
                 },
                 new Event()
                 {
-                    FromDate = new DateTime(2017, 10, 20, 19, 0, 0),
-                    ToDate =  new DateTime(2017, 10, 20, 20, 0, 0),
+                    FromDate = new DateTime(2017, 12, 12, 19, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 12, 20, 0, 0),
                     EnteredByUsername = "a",
                     ActivityCategoryId = 4,
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
@@ -463,6 +463,368 @@ namespace ZenithSocietyA2.Models
                     CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
                     IsActive = true,
                 },
+                
+                
+                // Below are the events for the week starting Dec. 4
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 4, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 4, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 1,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 6, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 6, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 2,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 3, 17, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 3, 19, 15, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 3,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 3, 19, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 3, 20, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 4,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 2, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 2, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 5,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 6, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 6, 12, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 6,
+                    CreationDate = new DateTime(2017, 12, 6, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 8, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 8, 13, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 7,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 7, 7, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 7, 8, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 8,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 22, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 22, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 9,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 9, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 9, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 10,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 9, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 9, 12, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 11,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 9, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 9, 13, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 12,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 9, 13, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 9, 18, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 13,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                
+                
+                // Below are the events from the week of dec. 11
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 17, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 17, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 1,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 16, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 16, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 2,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 13, 17, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 13, 19, 15, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 3,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 13, 19, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 13, 20, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 4,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 14, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 14, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 5,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 14, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 14, 12, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 6,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 14, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 14, 13, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 7,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 15, 7, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 15, 8, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 8,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 15, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 15, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 9,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 15, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 15, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 10,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 15, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 12, 15, 12, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 11,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 15, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 15, 13, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 12,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 12, 15, 13, 0, 0),
+                    ToDate =  new DateTime(2017, 12, 15, 18, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 13,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                
+                
+                // Below are the events from Nov 27
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11, 27, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 27, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 1,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11, 28, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11, 28, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 2,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  28, 17, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  28, 19, 15, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 3,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  28, 19, 0, 0),
+                    ToDate =  new DateTime(2017, 11,  28, 20, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 4,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  29, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  29, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 5,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  29, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  29, 12, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 6,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  29, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 11,  29, 13, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 7,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  30, 7, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  30, 8, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 8,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  30, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  30, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 9,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  30, 8, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  30, 10, 30, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 10,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  30, 10, 30, 0),
+                    ToDate =  new DateTime(2017, 11,  30, 12, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 11,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  30, 12, 0, 0),
+                    ToDate =  new DateTime(2017, 11,  30, 13, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 12,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                new Event()
+                {
+                    FromDate = new DateTime(2017, 11,  30, 13, 0, 0),
+                    ToDate =  new DateTime(2017, 11,  30, 18, 0, 0),
+                    EnteredByUsername = "a",
+                    ActivityCategoryId = 13,
+                    CreationDate = new DateTime(2017, 9, 17, 10, 30, 0),
+                    IsActive = true,
+                },
+                
+                
             };
             return events;
         }
