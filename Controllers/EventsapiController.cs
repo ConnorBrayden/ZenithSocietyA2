@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -24,11 +25,96 @@ namespace ZenithSocietyA2.Controllers
             _context = context;
         }
 
-        // GET: api/Studentsapi
+        // GET: api/Events
         [HttpGet]
-        public IEnumerable<Event> GetEvents()
+        public IEnumerable<Event> GetEvents([FromQuery] string startDate)
         {
-            return _context.Events;
+
+            DateTime start       = new DateTime();
+            List<DateTime> dates = null;
+            bool tryStart        = false;
+
+            if (!String.IsNullOrEmpty(startDate))
+            {
+                tryStart = DateTime.TryParse(startDate, out start);
+            }
+
+            dates = tryStart ? GetDaysOfCurrentWeekFromStart(start) : GetDaysOfCurrentWeek();
+
+            List<Event> apiEvents = new List<Event>();
+            var allEvents = _context.Events;
+            var events    = _context.Events.Include(e => e.ActivityCategory).Where(e => e.IsActive == true).ToList();
+
+            // Sort the events by date time
+            events.Sort((x, y) => x.FromDate.CompareTo(y.FromDate));
+
+            List<Event> eventsToReturn = new List<Event>();
+
+            //List<DateandEventsModel> datesEvents = new List<DateandEventsModel>();
+            
+            foreach (var d in dates)
+            {
+                Event currentModel = new Event();
+                
+                var dayOfWeek = (d.ToString("D", new CultureInfo("EN-US")));
+            
+                
+                //currentModel.Events = new List<Event>();
+                foreach (var e in events)
+                {
+                    if (e.FromDate.Date == d.Date)
+                    {
+                       eventsToReturn.Add(new Event {
+                            EnteredByUsername = e.EnteredByUsername,
+                            ToDate = e.ToDate,
+                            EventId = e.EventId,
+                            CreationDate = e.CreationDate,
+                            IsActive = e.IsActive,
+                            FromDate = e.FromDate,
+                            ActivityCategory = _context.ActivityCategories.Find(e.ActivityCategoryId)
+                        });
+                    }
+                }
+                //eventsToReturn.Add(currentModel);
+            }
+
+            return eventsToReturn;
+            
+            
+            //foreach (var e in allEvents)
+            //{
+            //    apiEvents.Add(new ApiEventModel
+            //    {
+            //        Username = e.Username,
+            //        EndDateTime = e.EndDateTime,
+            //        EventId = e.EventId,
+            //        CreationDate = e.CreationDate,
+            //        IsActive = e.IsActive,
+            //        StartDateTime = e.StartDateTime,
+            //        ActivityCategory = _context.ActivityCategories.Find(e.ActivityCategoryId).ActivityDescription
+            //    });
+            //}
+            //return apiEvents;
+            
+        }
+
+        public static List<DateTime> GetDaysOfCurrentWeek()
+        {
+            DateTime startOfWeek = DateTime.Today.AddDays(
+                ((int)(CultureInfo.CurrentCulture.DateTimeFormat.FirstDayOfWeek + 1)) -
+                 (int)DateTime.Today.DayOfWeek);
+
+            var result = Enumerable
+              .Range(0, 7)
+              .Select(i => startOfWeek
+                 .AddDays(i)).ToList<DateTime>();
+            return result;
+            
+        }
+
+        public static List<DateTime> GetDaysOfCurrentWeekFromStart(DateTime start)
+        {
+            return Enumerable.Range(0,7).Select(i => start.AddDays(i)).ToList<DateTime>();
         }
 
         // GET: api/Eventsapi/5

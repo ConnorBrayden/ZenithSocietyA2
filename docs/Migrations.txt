@@ -1,0 +1,2 @@
+dotnet ef migrations add "First Migration"
+dotnet ef database update
