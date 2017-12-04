@@ -70,8 +70,11 @@ namespace ZenithSocietyA2.Controllers
                             EventId = e.EventId,
                             CreationDate = e.CreationDate,
                             IsActive = e.IsActive,
+                            ActivityCategoryId = e.ActivityCategoryId,
                             FromDate = e.FromDate,
+                            
                             ActivityCategory = _context.ActivityCategories.Find(e.ActivityCategoryId)
+                            
                         });
                     }
                 }
