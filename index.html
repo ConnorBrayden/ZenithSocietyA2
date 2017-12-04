@@ -1,0 +1,17 @@
+﻿<h3>Cors Request</h3>
+<button id="btnGetEvents">Get Patients</button>
+<pre id="preOutput"></pre>
+<script src="Scripts/jquery-3.2.1.js"></script>
+<script>
+$(function () {
+var getPatients = function () {
+    var url = "http://localhost:10473/api/Events/";
+$.get(url).always(showResponse);
+return false;
+};
+var showResponse = function (object) {
+$("#preOutput").text(JSON.stringify(object, null, 4));
+};
+$("#btnGetPatients").click(getEvents);
+});
+</script>

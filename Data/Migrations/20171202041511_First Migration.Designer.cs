@@ -11,9 +11,10 @@ using ZenithSocietyA2.Data;
 namespace ZenithSocietyA2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171202041511_First Migration")]
+    partial class FirstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -126,21 +127,6 @@ namespace ZenithSocietyA2.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ZenithSocietyA2.Models.ActivityCategory", b =>
-                {
-                    b.Property<int>("ActivityCategoryId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ActivityDescription")
-                        .IsRequired();
-
-                    b.Property<DateTime>("CreationDate");
-
-                    b.HasKey("ActivityCategoryId");
-
-                    b.ToTable("ActivityCategories");
-                });
-
             modelBuilder.Entity("ZenithSocietyA2.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -191,30 +177,6 @@ namespace ZenithSocietyA2.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("ZenithSocietyA2.Models.Event", b =>
-                {
-                    b.Property<int>("EventId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ActivityCategoryId");
-
-                    b.Property<DateTime>("CreationDate");
-
-                    b.Property<string>("EnteredByUsername");
-
-                    b.Property<DateTime>("FromDate");
-
-                    b.Property<bool>("IsActive");
-
-                    b.Property<DateTime>("ToDate");
-
-                    b.HasKey("EventId");
-
-                    b.HasIndex("ActivityCategoryId");
-
-                    b.ToTable("Events");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -257,14 +219,6 @@ namespace ZenithSocietyA2.Data.Migrations
                     b.HasOne("ZenithSocietyA2.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("ZenithSocietyA2.Models.Event", b =>
-                {
-                    b.HasOne("ZenithSocietyA2.Models.ActivityCategory", "ActivityCategory")
-                        .WithMany()
-                        .HasForeignKey("ActivityCategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
