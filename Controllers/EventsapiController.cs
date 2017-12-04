@@ -25,7 +25,7 @@ namespace ZenithSocietyA2.Controllers
             _context = context;
         }
 
-        // GET: api/Events
+        // GET: api/Events?startDate=2017-01-01
         [HttpGet]
         public IEnumerable<Event> GetEvents([FromQuery] string startDate)
         {
@@ -34,10 +34,13 @@ namespace ZenithSocietyA2.Controllers
             List<DateTime> dates = null;
             bool tryStart        = false;
 
-            if (!String.IsNullOrEmpty(startDate))
+            if (String.IsNullOrEmpty(startDate))
             {
-                tryStart = DateTime.TryParse(startDate, out start);
+                return _context.Events;
             }
+            
+            tryStart = DateTime.TryParse(startDate, out start);
+
 
             dates = tryStart ? GetDaysOfCurrentWeekFromStart(start) : GetDaysOfCurrentWeek();
 
