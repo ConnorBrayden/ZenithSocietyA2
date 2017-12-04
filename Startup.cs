@@ -79,6 +79,8 @@ namespace ZenithSocietyA2
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            context.Database.Migrate();
+
             Seed.SeedRoles(roleManager, userManager, context);
 			Seed.SeedEvents(context);
 
