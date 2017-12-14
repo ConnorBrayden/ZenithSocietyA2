@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 //using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,19 +11,31 @@ using System.Web;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using ZenithSocietyA2.Models;
 using ZenithSocietyA2.Data;
 
-namespace ZenithWebSite.Controllers
+namespace ZenithSocietyA2.Controllers
 {
     [Authorize(Roles = "Admin")]
     public class ActivityCategoriesController : Controller
     {
         private ApplicationDbContext db;
+        
+        // Brayden 2017-12-14 - Adding localization
 
-        public ActivityCategoriesController(ApplicationDbContext context)
+        private readonly IStringLocalizer<ActivityCategoriesController> _localizer;
+
+        public ActivityCategoriesController(ApplicationDbContext context, IStringLocalizer<ActivityCategoriesController> localizer)
         {
             db = context;
+            _localizer = localizer;
+       //     _localizer = (IStringLocalizer<ActivityCategoriesController>)_localizer.WithCulture(new CultureInfo("fr-FR"));
+            
+            
+
         }
         
         
@@ -50,6 +63,16 @@ namespace ZenithWebSite.Controllers
         // GET: ActivityCategories/Create
         public ActionResult Create()
         {
+            ViewData["title"] = _localizer["Create Activity Category"];
+            
+            Console.WriteLine($"title: {ViewData["title"]}");
+            Console.WriteLine($"create: {_localizer.GetString("Create")}");
+            
+            ViewBag.description = _localizer["Enter a description for a new activity category"];
+            ViewBag.inputLabel = _localizer["Activity Description"];
+            ViewBag.create = _localizer["Create"];
+            ViewBag.back = _localizer["Back to List"];
+            
             return View();
         }
 
